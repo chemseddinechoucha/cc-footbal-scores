@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:fillColor="@color/football_ball"
+        android:pathData="M54,14a40,40 0,1 0,0 80a40,40 0,1 0,0 -80" />
+    <path
+        android:fillColor="@color/football_ball_detail"
+        android:pathData="M54,36l16,12  -6,19 -20,0 -6,-19z" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="M54,36L54,14M70,48L86,36M64,67L79,82M44,67L29,82M38,48L22,36"
+        android:strokeColor="@color/football_ball_detail"
+        android:strokeLineCap="round"
+        android:strokeWidth="3" />
+</vector>

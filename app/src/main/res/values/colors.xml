@@ -1,0 +1,6 @@
+<resources>
+    <color name="football_green">#126B45</color>
+    <color name="football_ball">#FFFFFF</color>
+    <color name="football_ball_detail">#123D2C</color>
+    <color name="splash_background">#126B45</color>
+</resources>
