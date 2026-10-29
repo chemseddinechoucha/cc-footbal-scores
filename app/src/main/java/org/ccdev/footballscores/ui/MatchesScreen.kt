@@ -55,10 +55,12 @@ import org.ccdev.footballscores.R
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneOffset
+import java.time.format.FormatStyle
 import java.time.format.DateTimeFormatter
+import java.util.Locale
 
-private val timeFmt = DateTimeFormatter.ofPattern("HH:mm")
-private val dateFmt = DateTimeFormatter.ofPattern("EEE, d MMM")
+private val timeFmt = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).withLocale(Locale.getDefault())
+private val dateFmt = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).withLocale(Locale.getDefault())
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -2,3 +2,4 @@
 **/build/
 .idea/
 local.properties
+/app/football-scores-release.jks

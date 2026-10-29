@@ -19,6 +19,21 @@ android {
     namespace = "org.ccdev.footballscores"
     compileSdk = 36
 
+    signingConfigs {
+        create("release") {
+            storeFile = rootProject.file(
+                localProps.getProperty("RELEASE_STORE_FILE")
+                    ?: error("RELEASE_STORE_FILE is missing from local.properties"),
+            )
+            storePassword = localProps.getProperty("RELEASE_STORE_PASSWORD")
+                ?: error("RELEASE_STORE_PASSWORD is missing from local.properties")
+            keyAlias = localProps.getProperty("RELEASE_KEY_ALIAS")
+                ?: error("RELEASE_KEY_ALIAS is missing from local.properties")
+            keyPassword = localProps.getProperty("RELEASE_KEY_PASSWORD")
+                ?: error("RELEASE_KEY_PASSWORD is missing from local.properties")
+        }
+    }
+
     defaultConfig {
         applicationId = "org.ccdev.footballscores"
         minSdk = 26            // java.time works natively, no desugaring needed
@@ -26,6 +41,12 @@ android {
         versionCode = 1
         versionName = "1.0"
         buildConfigField("String", "FOOTBALL_API_KEY", "\"${localProps.getProperty("FOOTBALL_API_KEY", "")}\"")
+    }
+
+    buildTypes {
+        getByName("release") {
+            signingConfig = signingConfigs.getByName("release")
+        }
     }
 
     buildFeatures {
